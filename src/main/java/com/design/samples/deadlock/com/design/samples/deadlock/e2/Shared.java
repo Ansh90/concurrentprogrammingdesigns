@@ -3,9 +3,9 @@ package com.design.samples.deadlock.com.design.samples.deadlock.e2;
 // This class is shared by both threads
 public class Shared {
     // first synchronized method
-    synchronized void test1(Shared s2) {
+    public synchronized void test1(Shared s2) {
         System.out.println("test1-begin");
-        Util.sleep(1000);
+        Util.sleep(100);
 
         // taking object lock of s2 enters
         // into test2 method
@@ -14,9 +14,9 @@ public class Shared {
     }
 
     // second synchronized method
-    synchronized void test2(Shared s1) {
+    public synchronized void test2(Shared s1) {
         System.out.println("test2-begin");
-        Util.sleep(1000);
+        Util.sleep(100);
 
         // taking object lock of s1 enters
         // into test1 method
