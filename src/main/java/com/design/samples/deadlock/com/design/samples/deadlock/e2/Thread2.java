@@ -18,4 +18,3 @@ public class Thread2 extends Thread {
         s2.test2(s1);
     }
 }
-}
