@@ -1,0 +1,14 @@
+Advantage of using CompletableFuture API over executor API
+
+if you want the result out of Future which will be returned by Exceutor you need to call join() or get() which actually blocks current thread
+until Future object received object.
+
+If you wish to use the Future object when available without blocking current execution then consider using chaing offered by
+CompletableFuture
+
+Lets say you want to send request to db get get results and log the results and do not wish to block for logging
+until recived results from DB you can chain
+CompletableFuture.thenApplyAsync(userID_from_db, executors).thenAcceptAsync(Consumer);
+
+Now Consumer can be implemented for logging retured users. Consumer will run on any aviablale thread on
+passed executor.
