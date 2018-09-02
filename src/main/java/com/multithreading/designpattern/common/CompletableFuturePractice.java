@@ -1,4 +1,4 @@
-package com.multithreading.designpattern;
+package com.multithreading.designpattern.common;
 
 import java.util.concurrent.*;
 import java.util.function.Supplier;
